@@ -1,0 +1,16 @@
+.my-bg,
+.my-bg-button{
+    background-color: #c41329;
+}
+
+.my-bg-button:hover{
+    background-color: #870917;
+}
+
+#my-red{
+    color: #c41329;
+}
+
+body{
+ background-color: rgb(24, 24, 24);
+}
