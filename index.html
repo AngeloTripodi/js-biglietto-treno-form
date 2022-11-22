@@ -5,16 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Train Ticket</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+
 </head>
 <body>
-    
-<main>
-<h1>Biglietto treno</h1>
-    <label for="km"> Inserire i km da percorrere:</label>
-    <input type="number" name="km" id="km"> 
-    <label for="travelerAge"> Inserire la tua Età:</label>
-    <input type="number" name="age" id="travelerAge">
-    <input type="button" value="INVIA" id="my-btn">
+    <div class="container py-4">
+  
+      <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">Boolitalia</h1>
+          <p class="col-md-8 fs-4">Scopri subito le nostre offerte! Compila i campi seguenti per scoprire i prezzi riservati a te.</p>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="formKm">Inserisci i km che vuoi percorrere:</span>
+            <input type="number" class="form-control" id="km" placeholder="es: 123">
+          </div>
+          <div class="input-group mb-3">
+            <input type="number" class="form-control" id="travelerAge" placeholder="es: 30">
+            <span class="input-group-text" id="FormTravelerAge">Inserisci la tua Età</span>
+          </div>
+          <button class="btn btn-primary btn-lg" id="my-btn" type="button">INVIA</button>
+        
+          
+        </div>
+      </div>
+  
+      <div class="row test d-none popupPrice">
+        <div class="col-md-12">
+          <div class="h-100 p-5 text-bg-dark rounded-3">
+            <h3 id="price"></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </main>
 
  <script type="text/javascript" src="./js/sript.js"></script>

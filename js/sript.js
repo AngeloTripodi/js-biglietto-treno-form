@@ -5,5 +5,34 @@ const button = document.getElementById('my-btn');
 button.addEventListener('click', function(){
     console.log(km.value);
     console.log(inputAge.value);
+
+    const pricePerKm = km.value * 0.2762;
+    console.log(pricePerKm);
+
+    if ((travelerAge.value >= 1) && (travelerAge.value <18)) {
+        const discountUnder = pricePerKm * 17.5 / 100;
+        const totalUnder = pricePerKm - discountUnder;
+        console.log(totalUnder);
+        document.getElementById('price').innerHTML = ("Ottimo, hai ottenuto uno sconto del 17.5\%! Il prezzo è:" + " " + totalUnder.toFixed(2) + '\&euro;')
+       let removeDnone = document.querySelector('.popupPrice');
+       removeDnone.classList.remove('d-none'); 
+        
+    }
+    else if ((travelerAge.value>18) && (travelerAge.value <65)) {
+        console.log(pricePerKm);
+        document.getElementById('price').innerHTML = ("Non hai diritto ad alcuno sconto. Il prezzo è:" + " " + pricePerKm.toFixed(2) + '\&euro;')
+        let removeDnone = document.querySelector('.popupPrice');
+        removeDnone.classList.remove('d-none'); 
+    }
+    else {
+        const discountOver = pricePerKm * 33.3 / 100;
+        const totalOver = pricePerKm - discountOver;
+        console.log(totalOver);
+        document.getElementById('price').innerHTML = ("Ottimo, hai ottenuto uno sconto del 33.3\%! Il prezzo è:" + " " + totalOver.toFixed(2) + '\&euro;')
+        let removeDnone = document.querySelector('.popupPrice');
+        removeDnone.classList.remove('d-none'); 
+    }
+
 });
 
+console.log(document.querySelector('.test'));
