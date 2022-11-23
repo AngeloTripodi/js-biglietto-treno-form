@@ -9,7 +9,18 @@ button.addEventListener('click', function(){
     const pricePerKm = km.value * 0.2762;
     console.log(pricePerKm);
 
-    if ((travelerAge.value >= 1) && (travelerAge.value <18)) {
+    if (isNaN(inputAge.value)) {
+        inputAge.value = 50;
+        console.log ("Non hai inserito un'età vera, quindi non hai alcun diritto ad uno sconto!")
+    }
+    
+    if ((inputAge.value <=0) || (inputAge.value >=123)) {
+        inputAge.value = 50;
+        console.log ("Non hai inserito un'età vera, quindi non hai alcun diritto ad uno sconto!")
+    }
+
+
+    if ((inputAge.value >= 1) && (inputAge.value <18)) {
         const discountUnder = pricePerKm * 17.5 / 100;
         const totalUnder = pricePerKm - discountUnder;
         console.log(totalUnder);
@@ -18,7 +29,7 @@ button.addEventListener('click', function(){
        removeDnone.classList.remove('d-none'); 
         
     }
-    else if ((travelerAge.value>18) && (travelerAge.value <65)) {
+    else if ((inputAge.value>18) && (inputAge.value <65)) {
         console.log(pricePerKm);
         document.getElementById('price').innerHTML = ("Non hai diritto ad alcuno sconto. Il prezzo è:" + " " + pricePerKm.toFixed(2) + '\&euro;')
         let removeDnone = document.querySelector('.popupPrice');
@@ -34,5 +45,3 @@ button.addEventListener('click', function(){
     }
 
 });
-
-console.log(document.querySelector('.test'));
